@@ -1,3 +1,4 @@
+const { timeStamp } = require("console");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Mustache = require('mustache');
@@ -47,6 +48,23 @@ inquirer
             type: 'input',
             message: 'Describe any pre-installation instructions:',
             name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'How to use or launch this application?',
+            name: 'usage',
+        },
+        {
+            type: 'list',
+            message: 'Test enviroment?',
+            name: "test",
+            choices: ["Yes", "No"]
+        },
+        {
+            type: 'checkbox',
+            message: 'License?',
+            name: "license",
+            choices: ["MIT", "Mozilla"]
         }
         // {
         //     type: 'input',
