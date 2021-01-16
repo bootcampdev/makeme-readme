@@ -5,7 +5,7 @@ const Mustache = require('mustache');
 
 const generateMarkdown = require("./utils/generateMarkdown");
 
-const mustache_template_js = './utils/main.mustache';
+const mustache_template = './utils/main.mustache';
 const mustache_template_csharp = './utils/csharp.mustache';
 
 //axios
@@ -28,12 +28,12 @@ const mustache_template_csharp = './utils/csharp.mustache';
 inquirer
     .prompt([
         /* Pass your questions in here */
-        {
-            type: 'list',
-            message: 'Which Readme template wwould you like to use?',
-            name: 'template_base',
-            choices: ["JavaScript", "C#"]
-        },
+        // {
+        //     type: 'list',
+        //     message: 'Which Readme template wwould you like to use?',
+        //     name: 'template_base',
+        //     choices: ["JavaScript", "C#"]
+        // },
         {
             type: 'input',
             message: 'What is your title of the project?',
@@ -56,9 +56,27 @@ inquirer
         },
         {
             type: 'list',
-            message: 'Test enviroment?',
+            message: 'Is there a test enviroment?',
             name: "test",
-            choices: ["Yes", "No"]
+            choices: ["Yes", "No"],
+            default: "No"
+        },
+        {
+            type: 'input',
+            name: 'testdesc',
+            message: 'Describe the test enviroment:',
+            when: (data) => data.test === 'Yes'
+        },
+        {
+            type: 'input',
+            message: 'Your GitHub account username?',
+            name: 'username',
+            default: "bootcampdev"
+        },
+        {
+            type: 'input',
+            message: 'Your email address?',
+            name: 'email'
         },
         {
             type: 'checkbox',
@@ -66,23 +84,6 @@ inquirer
             name: "license",
             choices: ["MIT", "Mozilla"]
         }
-        // {
-        //     type: 'input',
-        //     message: 'Enter a usage command:',
-        //     name: 'usage',
-        // },
-        // {
-        //     type: 'checkbox',
-        //     message: 'What language to you know?',
-        //     name: 'language',
-        //     choices: ["c#", "javascript"],
-        // },
-        // {
-        //     type: 'list',
-        //     message: 'What method of communication?',
-        //     name: 'communication',
-        //     choices: ["english", "cherbish"]
-        // }
     ])
     .then(data => {
         // Use user feedback for... whatever!!
@@ -100,11 +101,13 @@ inquirer
     
         data.update_date = Date().toString();
 
-        let mustache_template;
-        if (data.template_base === "JavaScript")
-            mustache_template = mustache_template_js;
-        else
-            mustache_template = mustache_template_csharp;            
+
+
+        // let mustache_template;
+        // if (data.template_base === "JavaScript")
+        //     mustache_template = mustache_template_js;
+        // else
+        //     mustache_template = mustache_template_csharp;            
 
         console.log(data);
         console.log (mustache_template);
