@@ -1,39 +1,19 @@
-const { timeStamp } = require("console");
+//
+// generate a readme file using a template.  can add
+// additional templates later for specifc language environments
+
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Mustache = require('mustache');
-
-const generateMarkdown = require("./utils/generateMarkdown");
+//
+// constant variables
 
 const mustache_template = './utils/main.mustache';
-const mustache_template_csharp = './utils/csharp.mustache';
-
-//axios
-
-//console.log(process.argv);
-
-// fs.writeFile('log.txt', process.argv[2], (err) =>
-//   err ? console.error(err) : console.log('Success!')
-// );
-
-// appendFile() takes in 3 arguments: path, data, and callback function
-// fs.appendFile('log.txt', `${process.argv[2]}\n`, (err) =>
-//   // Ternary operator takes in a condition followed by a question mark (?)
-//   // then an expression to execute if the condition is truthy followed by a colon (:)
-//   // and finally the expression to execute if the condition is falsy.
-//   // This operator is frequently used as a shortcut for the if statement.
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
+//
+// user prompts
 
 inquirer
     .prompt([
-        /* Pass your questions in here */
-        // {
-        //     type: 'list',
-        //     message: 'Which Readme template wwould you like to use?',
-        //     name: 'template_base',
-        //     choices: ["JavaScript", "C#"]
-        // },
         {
             type: 'input',
             message: 'What is your title of the project?',
@@ -86,49 +66,22 @@ inquirer
         }
     ])
     .then(data => {
-        // Use user feedback for... whatever!!
-        //const html= generateMarkdown(data)
-
-        // fs.writeFile("readme.md", JSON.stringify(data), (err)=>{
-        //     err ? (console.log("failed")) : console.log("success");                    
-        // })
-
-        //fs.writeFile("`${slugify(data.name,{replacement: '-',lower: false,})}.html`", html, err => { if(err) throw err;} )
-
-        // fs.writeFile("readme.md", html, (err)=>{
-        //     err ? (console.log("failed")) : console.log("success");                    
-        // })
     
-        data.update_date = Date().toString();
+        data.update_date = Date().toString();        
 
-
-
-        // let mustache_template;
-        // if (data.template_base === "JavaScript")
-        //     mustache_template = mustache_template_js;
-        // else
-        //     mustache_template = mustache_template_csharp;            
-
-        console.log(data);
-        console.log (mustache_template);
+        //console.log(data);
+        //console.log (mustache_template);
        
         fs.readFile(mustache_template, (err, template) =>  {
             if (err) throw err;
             const output = Mustache.render(template.toString(), data);
-            fs.writeFileSync('readme.md', output);
+            fs.writeFileSync('readme.md', output, function (err)
+            {
+                if (err) return console.log(err);               
+            });
+            console.log("readme successfully created!");
         });      
 
-    })
-    // .catch(error => {
-    //     if (error.isTtyError) {
-    //         // Prompt couldn't be rendered in the current environment
-    //     } else {
-    //         // Something else when wrong
-    //     }
-    // });
-
-    
-
-    //generateReadMe();      
+    })    
 
 
