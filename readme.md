@@ -19,10 +19,7 @@
 
 ## Description
 ```
-A self genernated readme.md file for your GitHub projects. You are prompted for some basic information that is captured
-and placed in the readme.md. This includes the sections of: title, description, installation, usage, and licenses.  
-Table of contents is available for navigation within the readme.md. Links and email addresses are also included 
-in the readme.  The readme.md can be further customized for specific applicaitons.
+A self genernated readme.md file for your GitHub projects. You are prompted for some basic information that is captured and placed in the readme.md. This includes the sections of: title, description, installation, usage, and licenses. Table of contents is available for navigation within the readme.md. Links and email addresses are also included in the readme. The readme.md can be further customized for specific applicaitons.
 ```
 
 ## Table of Contents
@@ -35,7 +32,7 @@ in the readme.  The readme.md can be further customized for specific applicaiton
 
 
 ## Installation Requirements
----
+
 Go to the Application Repository Section and follow the link to download from GitHub this respository. Run &quot;npm install&quot; to add required modules.
 
 
@@ -46,12 +43,12 @@ $ node index
 
 
 ## Tests
----
+
 No
 
 
 ## Questions
----
+
 [GitHub Account](https://github.com/bootcampdev)
 
 
@@ -59,21 +56,21 @@ No
 
 
 ## Contributing
----
+
 
 
 
 ## Application Repository
----
+
 [Makeme-Readme](https://bootcampdev.github.io/makeme-readme/)
 
 ## License
----
+
 The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology in the late 1980s.
 
 The Mozilla Public License is a free and open-source software license developed and maintained by the Mozilla Foundation.
 
-
+---
 ### Last update
 
-Sun Jan 17 2021 16:36:24 GMT-0600 (Central Standard Time)
+Sun Jan 17 2021 16:47:26 GMT-0600 (Central Standard Time)
