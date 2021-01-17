@@ -19,7 +19,7 @@
 
 ## Description
 ```
-A self genernated readme.md file for your GitHub projects. You are prompted for some basic information that is captured and placed in the readme.md. This includes the sections of: title, description, installation, usage, and licenses. Table of contents is available for navigation within the readme.md. Links and email addresses are also included in the readme. The readme.md can be further customized for specific applicaitons.
+A self genernated readme.md file for your GitHub projects. You are prompted for some basic information that is captured and placed in the readme.md. This includes the sections of: title, description, installation, usage, and licenses.  Table of contents is available for navigation within the readme.md. Links and email addresses are also included in the readme.  The readme.md can be further customized for specific applicaitons.
 ```
 
 ## Table of Contents
@@ -73,4 +73,4 @@ The Mozilla Public License is a free and open-source software license developed 
 ---
 ### Last update
 
-Sun Jan 17 2021 16:47:26 GMT-0600 (Central Standard Time)
+Sun Jan 17 2021 16:53:23 GMT-0600 (Central Standard Time)
