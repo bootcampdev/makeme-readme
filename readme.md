@@ -18,9 +18,9 @@
 
 
 ## Description
-```
+
 A self genernated readme.md file for your GitHub projects. You are prompted for some basic information that is captured and placed in the readme.md. This includes the sections of: title, description, installation, usage, and licenses.  Table of contents is available for navigation within the readme.md. Links and email addresses are also included in the readme.  The readme.md can be further customized for specific applicaitons.
-```
+
 
 ## Table of Contents
 
